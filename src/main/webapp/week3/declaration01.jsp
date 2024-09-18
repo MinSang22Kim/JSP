@@ -7,11 +7,21 @@
 <title>Scripting Tag</title>
 </head>
 <body>
-	<!-- 선언문은 !랑 써줌, 전역으로 선언 -->
-	<%! int data = 50; %>
-	<!--  스크립틀릿 -->
-	<%
-		out.println("Value of the variable is:" + data);
-	%>
+    <!-- 전역 변수 선언문 -->
+    <%! int data = 50; %>
+
+    <!-- 스크립틀릿: 지역 변수 선언 -->
+    <% 
+        int cnt = 0; 
+    %>
+
+    <!-- 전역 변수 data 출력 -->
+    <%
+        out.println("data: " + data);
+    %>
+
+    <!-- 표현문 -->
+    <%= "cnt: " + cnt %>
+
 </body>
 </html>
