@@ -4,7 +4,7 @@
 </head>
 <body>
 	<h1>Self-Introduction</h1>
-	<p>Name: Hong Gil Son</p>
-	<p>Department: MobileMedia</p>
+	<p>Name: Kim Min Sang</p>
+	<p>Department: Computer Engineering</p>
 </body>
 </html>
