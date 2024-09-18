@@ -7,12 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	for (int i = 0; i < 10; i++) {
-		if (i % 2 == 0) {
-			out.println(i + "<br>");
-		}
-	}
-	%>
+	<p>
+		Today's date:
+		<%=new java.util.Date()%>
+	</p>
 </body>
 </html>

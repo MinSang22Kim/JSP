@@ -8,11 +8,10 @@
 </head>
 <body>
 	<%
-	for (int i = 0; i < 10; i++) {
-		if (i % 2 == 0) {
-			out.println(i + "<br>");
-		}
-	}
+	int a = 10;
+	int b = 20;
+	int c = 30;
 	%>
+	<%=a + b + c%>
 </body>
 </html>
