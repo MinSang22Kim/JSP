@@ -6,7 +6,6 @@ import week5.com.dao.Book;
 public class BookRepository {
 	private ArrayList<Book> listOfBooks = new ArrayList<Book>();
 
-	// 생성자
 	public BookRepository() {
 		// 첫 번째 책
 		Book book1 = new Book("ISBN1234", "C# 프로그래밍", 27000);
@@ -38,7 +37,6 @@ public class BookRepository {
 		book3.setUnitsInStock(1000);
 		book3.setReleaseDate("2023/01/01");
 
-		// 책 리스트에 추가
 		listOfBooks.add(book1);
 		listOfBooks.add(book2);
 		listOfBooks.add(book3);
