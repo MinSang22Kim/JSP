@@ -1,4 +1,4 @@
-package week5.com.dao;
+package com.dao;
 
 public class Person {
 	private int id = 202014889;

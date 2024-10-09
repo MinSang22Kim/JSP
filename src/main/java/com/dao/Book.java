@@ -1,4 +1,4 @@
-package week5.com.dao;
+package com.dao;
 
 import java.io.Serializable;
 

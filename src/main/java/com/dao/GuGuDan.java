@@ -1,4 +1,4 @@
-package week5.com.dao;
+package com.dao;
 
 public class GuGuDan {
 	public String process(int number) {
