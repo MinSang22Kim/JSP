@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="week5.com.dao.Book" %>
-<jsp:useBean id="bookDAO" class="week5.com.dao.BookRepository" scope="session" />
+<%@ page import="com.dao.Book" %>
+<jsp:useBean id="bookDAO" class="com.dao.BookRepository" scope="session" />
 <!DOCTYPE html>
 <html>
 <head>
