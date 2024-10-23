@@ -15,13 +15,7 @@
 	<%
 		// 업로드 처리
 		String uploadPath = application.getRealPath("/WEB-INF/upload");
-		// String uploadPath = application.getRealPath("/Users/kimminsang/eclipse-workspace/JSP/src/main/webapp/WEB-INF/upload");
 		File uploadDir = new File(uploadPath);
-		
-		// 디렉토리가 존재하지 않으면 생성
-		if (!uploadDir.exists()) {
-		    uploadDir.mkdirs();
-		}
 		
 		MultipartRequest multi = new MultipartRequest(request, uploadPath, 5 * 1024 * 1024, "utf-8",
 				new DefaultFileRenamePolicy());
