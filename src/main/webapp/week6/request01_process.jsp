@@ -18,9 +18,7 @@
 		response.sendRedirect("response01_failed.jsp");
 	}
 	%>
-	<p>
-		아이디: <%=userId%>
-	<p>
-		비밀번호: <%=password%>
+	<p>아이디: <%=userId%>
+	<p>비밀번호: <%=password%>
 </body>
 </html>
