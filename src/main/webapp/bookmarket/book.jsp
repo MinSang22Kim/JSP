@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.dao.Book"%>
-<jsp:useBean id="bookDAO" class="com.dao.BookRepository" scope="session" />
+<%@ page import="com.book.Book"%>
+<jsp:useBean id="bookDAO" class="com.book.BookRepository" scope="session" />
 
 <!DOCTYPE html>
 <head>

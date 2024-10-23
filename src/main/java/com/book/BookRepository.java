@@ -1,7 +1,6 @@
-package com.dao;
+package com.book;
 
 import java.util.ArrayList;
-import com.dao.Book;
 
 public class BookRepository {
 	private ArrayList<Book> listOfBooks = new ArrayList<Book>();

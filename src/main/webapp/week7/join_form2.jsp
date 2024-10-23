@@ -9,7 +9,7 @@
 <body>
 	<h3>회원 가입</h3>
 	
-	<form action="join_process.jsp" name="member" method="post">
+	<form action="join_process_table.jsp" name="member" method="post">
         <p>아이디: <input type="text" name="id"> 
         <input type="button" value="아이디 중복 검사"></p>
 

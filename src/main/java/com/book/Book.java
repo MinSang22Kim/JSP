@@ -1,4 +1,4 @@
-package com.dao;
+package com.book;
 
 import java.io.Serializable;
 
