@@ -14,7 +14,7 @@
 <body>
 	<%
 		// 업로드 처리
-		String uploadPath = application.getRealPath("/WEB-INF/upload");
+		String uploadPath = "/Users/kimminsang/Desktop";
 		File uploadDir = new File(uploadPath);
 		
 		MultipartRequest multi = new MultipartRequest(request, uploadPath, 5 * 1024 * 1024, "utf-8",
