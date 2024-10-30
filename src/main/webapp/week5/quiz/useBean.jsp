@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="week5.com.dao.GuGuDan"%>
-<jsp:useBean id="gugudanDAO" class="week5.com.dao.GuGuDan" />
+<%@ page import="com.dao.GuGuDan"%>
+<jsp:useBean id="gugudanDAO" class="com.dao.GuGuDan" />
 <!DOCTYPE html>
 <html>
 <head>

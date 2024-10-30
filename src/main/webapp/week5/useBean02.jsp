@@ -7,7 +7,7 @@
 <title>Action Tag</title>
 </head>
 <body>
-	<jsp:useBean id="bean" class="week5.com.dao.Calculator"/>
+	<jsp:useBean id="bean" class="com.dao.Calculator"/>
 	<%
 		int m = bean.process(5);
 		out.print("5의 3제곱 : " + m);
