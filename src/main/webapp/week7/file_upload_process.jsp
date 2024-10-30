@@ -13,7 +13,6 @@
 </head>
 <body>
 	<%
-		// 업로드 처리
 		String uploadPath = "/Users/kimminsang/Desktop";
 		File uploadDir = new File(uploadPath);
 		
