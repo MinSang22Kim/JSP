@@ -18,11 +18,13 @@
 	
 		// 파일 및 경로 설정
 		String filename = "";
-		String realFolder = "/Users/kimminsang/eclipse-workspace/JSP/src/main/webapp/resources/images";
-		int maxSize = 5 * 1024 * 1024; // 최대 업로드 파일 크기 5MB
-		String encType = "utf-8"; // 인코딩 유형
+		String path = "../resources/images/books";
+		// String path = "/Users/kimminsang";
+		
+		int maxSize = 5 * 1024 * 1024;
+		String encType = "utf-8";
 	
-		MultipartRequest multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
+		MultipartRequest multi = new MultipartRequest(request, path, maxSize, encType, new DefaultFileRenamePolicy());
 	
 		// 폼 데이터 가져오기
 		String bookId = multi.getParameter("bookId");

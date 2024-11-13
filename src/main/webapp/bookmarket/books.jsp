@@ -24,7 +24,7 @@
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <div class="card-body">
-                    	<img src="./resources/images/<%= book.getFilename() %>" style="width: 250px; height: 350px;">
+                    	<img src="./resources/images/book<%= book.getFilename() %>" style="width: 250px; height: 350px;">
                         <h5 class="card-title"><%= book.getName() %></h5>
                         <p class="card-text"><strong>저자:</strong> <%= book.getAuthor() %></p>
                         <p class="card-text"><strong>출판사:</strong> <%= book.getPublisher() %> | 
