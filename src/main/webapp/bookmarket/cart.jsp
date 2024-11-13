@@ -53,19 +53,18 @@
 	
 					for (int i = 0; i < cartList.size(); i++) {
 						Book book = cartList.get(i);
-						long total = book.getUnitPrice() * book.getUnitsInStock();
+						int total = book.getUnitPrice() * book.getQuantity();
 						sum += total;
 				%>
 				<tr>
 					<td><%=book.getBookId()%> - <%=book.getName()%></td>
 					<td><%=book.getUnitPrice()%></td>
-					<td><%=book.getUnitsInStock()%></td>
+					<td><%=book.getQuantity()%></td>
 					<td><%=total%></td>
-					<td><a href="./removeCart.jsp?id=<%=book.getBookId()%>"
-						class="badge text-bg-danger">삭제</a></td>
+					<td><a href="./removeCart.jsp?id=<%=book.getBookId()%>" class="badge text-bg-danger">삭제</a></td>
 				</tr>
 				<%
-				}
+					}
 				%>
 				<tr>
 					<th></th>

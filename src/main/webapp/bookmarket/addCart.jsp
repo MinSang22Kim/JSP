@@ -43,13 +43,13 @@
 			goodsQnt = list.get(i);
 			if (goodsQnt.getBookId().equals(id)) {
 				cnt++;
-				long orderQuantity = goodsQnt.getUnitsInStock() + 1;
-				goodsQnt.setUnitsInStock(orderQuantity);
+				int orderQuantity = goodsQnt.getQuantity() + 1;
+				goodsQnt.setQuantity(orderQuantity);
 			}
 		}
 	
 		if (cnt == 0) {
-			goods.setUnitsInStock(1);
+			goods.setQuantity(1);
 			list.add(goods);
 		}
 	
