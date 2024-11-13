@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
 <%
 	String cartId = session.getId();
 %>
@@ -51,7 +52,7 @@
 						cartList = new ArrayList<Book>();
 					}
 	
-					for (int i = 0; i < cartList.size(); i++) { // 상품리스트 하나씩 출력하기
+					for (int i = 0; i < cartList.size(); i++) {
 						Book book = cartList.get(i);
 						long total = book.getUnitPrice() * book.getUnitsInStock();
 						sum += total;

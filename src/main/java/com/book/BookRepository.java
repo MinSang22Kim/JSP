@@ -54,10 +54,22 @@ public class BookRepository {
         book3.setReleaseDate("2023/01/01");
         book3.setFilename("ISBN1236.jpg");
 
+        // 네 번째 책
+        Book book4 = new Book("ISBN1237", "JSP웹프로그래밍", 30000);
+        book4.setAuthor("송미영");
+        book4.setDescription(
+            "JSP로 웹프로그래밍을 시작하는 입문자가 쉽게 이해할 수 있도록 기본 개념을 상세하게 설명하며, 다양한 예제를 제시합니다. 또한 서버프로그래밍의 원리를 이해하면서 SQL로 데이터를 처리하는 기법도 배웁니다.");
+        book4.setPublisher("한빛아카데미");
+        book4.setCategory("IT모바일");
+        book4.setUnitsInStock(1000);
+        book4.setReleaseDate("2024/10/03");
+        book4.setFilename("ISBN1237.jpg");
+        
         // 리스트에 책 추가
         listOfBooks.add(book1);
         listOfBooks.add(book2);
         listOfBooks.add(book3);
+        listOfBooks.add(book4);
     }
 
     // 책 ID로 책을 검색하는 메서드
