@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="com.book.Book"%>
 <%@ page import="com.book.BookRepository"%>
@@ -18,7 +17,7 @@
 		<%@ include file="menu.jsp"%>
 		<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 			<div class="container-fluid py-5">
-				<h1 class="display-5 fw-bold">도서 쇼핑몰에 오신 것을 환영합니다</h1>
+				<h1 class="display-5 fw-bold">도서 쇼핑몰에 오신 것을 환영합니다!</h1>
 				<p class="col-md-8 fs-4">BookMarket</p>
 			</div>
 		</div>
