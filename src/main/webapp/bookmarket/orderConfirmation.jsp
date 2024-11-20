@@ -11,45 +11,38 @@
 </head>
 <body>
 	<%
-    request.setCharacterEncoding("UTF-8");
-
-    String cartId = session.getId();
-
-    String shipping_cartId = "";
-    String shipping_name = "";
-    String shipping_shippingDate = "";
-    String shipping_country = "";
-    String shipping_zipCode = "";
-    String shipping_addressName = "";
-
-    Cookie[] cookies = request.getCookies();
-
-    if (cookies != null) {
-        for (int i = 0; i < cookies.length; i++) {
-            Cookie thisCookie = cookies[i];
-            String n = thisCookie.getName();
-            if (n.equals("Shipping_cartId"))
-                shipping_cartId = URLDecoder.decode(thisCookie.getValue(), "utf-8");
-            if (n.equals("Shipping_name"))
-                shipping_name = URLDecoder.decode(thisCookie.getValue(), "utf-8");
-            if (n.equals("Shipping_shippingDate"))
-                shipping_shippingDate = URLDecoder.decode(thisCookie.getValue(), "utf-8");
-            if (n.equals("Shipping_country"))
-                shipping_country = URLDecoder.decode(thisCookie.getValue(), "utf-8");
-            if (n.equals("Shipping_zipCode"))
-                shipping_zipCode = URLDecoder.decode(thisCookie.getValue(), "utf-8");
-            if (n.equals("Shipping_addressName"))
-                shipping_addressName = URLDecoder.decode(thisCookie.getValue(), "utf-8");
-        }
-    }
-%>
-
-<html>
-<head>
-    <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
-    <title>주문 정보</title>
-</head>
-<body>
+	    request.setCharacterEncoding("UTF-8");
+	
+	    String cartId = session.getId();
+	
+	    String shipping_cartId = "";
+	    String shipping_name = "";
+	    String shipping_shippingDate = "";
+	    String shipping_country = "";
+	    String shipping_zipCode = "";
+	    String shipping_addressName = "";
+	
+	    Cookie[] cookies = request.getCookies();
+	
+	    if (cookies != null) {
+	        for (int i = 0; i < cookies.length; i++) {
+	            Cookie thisCookie = cookies[i];
+	            String n = thisCookie.getName();
+	            if (n.equals("Shipping_cartId"))
+	                shipping_cartId = URLDecoder.decode(thisCookie.getValue(), "utf-8");
+	            if (n.equals("Shipping_name"))
+	                shipping_name = URLDecoder.decode(thisCookie.getValue(), "utf-8");
+	            if (n.equals("Shipping_shippingDate"))
+	                shipping_shippingDate = URLDecoder.decode(thisCookie.getValue(), "utf-8");
+	            if (n.equals("Shipping_country"))
+	                shipping_country = URLDecoder.decode(thisCookie.getValue(), "utf-8");
+	            if (n.equals("Shipping_zipCode"))
+	                shipping_zipCode = URLDecoder.decode(thisCookie.getValue(), "utf-8");
+	            if (n.equals("Shipping_addressName"))
+	                shipping_addressName = URLDecoder.decode(thisCookie.getValue(), "utf-8");
+	        }
+	    }
+	%>
     <div class="container py-4">
         <%@ include file="menu.jsp" %>
 
