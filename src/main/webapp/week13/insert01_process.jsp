@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Database SQL</title>
+<title>Statement 객체로 INSERT 쿼리문 실행하기</title>
 </head>
 <body>
 	<%@ include file="dbconn.jsp"%>
