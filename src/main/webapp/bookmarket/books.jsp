@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="java.sql.*"%>
 <%@ page import="com.book.Book"%>
 <jsp:useBean id="bookDAO" class="com.book.BookRepository" scope="session" />
 <!DOCTYPE html>
@@ -24,27 +25,27 @@
 				<p class="col-md-8 fs-4">BookList</p>
 			</div>
 		</div>
-		
-		<%
-			ArrayList<Book> listOfBooks = bookDAO.getAllBooks();
-		%>
-
+		<%@ include file="dbconn.jsp" %>
 		<div class="row align-items-md-stretch text-center">
 			<%
-				for (int i = 0; i < listOfBooks.size(); i++) {
-					Book book = listOfBooks.get(i);
+				PreparedStatement pstmt = null;
+				ResultSet rs = null;
+				String sql = "SELECT * FROM book";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while(rs.next()){
 			%>
 			<div class="col-md-4">
 				<div class="h-100 p-2">
-					<img src="../resources/images/<%=book.getFilename()%>"
+					<img src="../resources/images/<%=rs.getString("b_filename") %>"
 						style="width: 250; height: 350" />
-					<h5><b><%=book.getName()%></b></h5>
-					<p><%=book.getAuthor()%><br>
-						<%=book.getPublisher()%><br>
-						<%=book.getUnitPrice()%>원
-					<p><%=book.getDescription().substring(0, 60)%>...
-					<p><%=book.getUnitPrice()%>원
-					<p><a href="./book.jsp?id=<%=book.getBookId()%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
+					<h5><b><%=rs.getString("b_name") %></b></h5>
+					<p><%=rs.getString("b_author") %><br>
+						<%=rs.getString("b_publisher") %><br>
+						<%=rs.getString("b_unitPrice") %>원
+					<p><%=rs.getString("b_description").substring(0, 60)%>...
+					<p><%=rs.getString("b_unitPrice")%>원
+					<p><a href="./book.jsp?id=<%=rs.getString("b_id")%>" class="btn btn-secondary" role="button"> 상세 정보 &raquo;></a>
 				</div>
 			</div>
 			<%

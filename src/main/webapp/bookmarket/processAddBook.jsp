@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="com.book.Book"%>
-<%@ page import="com.book.BookRepository"%>
-<%@ page import="com.oreilly.servlet.*"%>
-<%@ page import="com.oreilly.servlet.multipart.*"%>
-<%@ page import="java.util.*"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="com.oreilly.servlet.*" %>
+<%@ page import="com.oreilly.servlet.multipart.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
+<%@ include file="dbconn.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +14,7 @@
 <body>
 	<%
 		request.setCharacterEncoding("UTF-8");
-	
+
 		// 파일 및 경로 설정
 		String filename = "";
 		String path = "../resources/images/books";
@@ -27,7 +27,6 @@
 		// 폼 데이터 가져오기
 		String bookId = multi.getParameter("bookId");
 		String name = multi.getParameter("name");
-		String passwd = multi.getParameter("passwd");
 		String unitPrice = multi.getParameter("unitPrice");
 		String author = multi.getParameter("author");
 		String publisher = multi.getParameter("publisher");
@@ -46,23 +45,30 @@
         Integer price = unitPrice.isEmpty() ? 0 : Integer.valueOf(unitPrice);
         long stock = unitsInStock.isEmpty() ? 0 : Long.valueOf(unitsInStock);
 
+        if (unitsInStock.isEmpty())
+        	stock = 0;
+        else
+        	stock = Long.valueOf(unitsInStock);
+        
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO book VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, bookId);
+		pstmt.setString(2, name);
+		pstmt.setInt(3, price);
+		pstmt.setString(4, author);
+		pstmt.setString(5, description);
+		pstmt.setString(6, publisher);
+		pstmt.setString(7, category);
+		pstmt.setLong(8, stock);
+		pstmt.setString(9, releaseDate);
+		pstmt.setString(10, condition);
+		pstmt.setString(11, fileName);
+		pstmt.executeUpdate();
 	
-		// 책 객체 생성 및 저장
-		Book newBook = new Book();
-		newBook.setBookId(bookId);
-		newBook.setName(name);
-		newBook.setUnitPrice(price);
-		newBook.setAuthor(author);
-		newBook.setPublisher(publisher);
-		newBook.setReleaseDate(releaseDate);
-		newBook.setDescription(description);
-		newBook.setCategory(category);
-		newBook.setUnitsInStock(stock);
-		newBook.setFilename(fileName);
-	
-		// 데이터베이스에 저장
-		BookRepository dao = BookRepository.getInstance();
-		dao.addBook(newBook);
+		if (pstmt != null) pstmt.close();
+		if (conn != null) conn.close();
 	
 		// 페이지 리다이렉트
 		response.sendRedirect("books.jsp");
